@@ -2,16 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     android:gravity="center">
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white_color"
             android:gravity="center"
+            android:focusable="true"
+            android:layout_marginTop="@dimen/_minus30sdp"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
             android:orientation="vertical"
             android:paddingLeft="@dimen/_24sdp"
             android:paddingTop="@dimen/_56sdp"
@@ -30,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:textColorHint="@color/blue_color">
+                android:textColorHint="@color/white_color">
 
                 <EditText
                     android:id="@+id/input_name"
@@ -46,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:textColorHint="@color/blue_color">
+                android:textColorHint="@color/white_color">
 
                 <EditText
                     android:id="@+id/input_email"
@@ -62,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:textColorHint="@color/blue_color">
+                android:textColorHint="@color/white_color">
 
                 <EditText
                     android:id="@+id/input_password"
@@ -71,15 +75,31 @@
                     android:hint="Password"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
+            <!-- Confirm Password Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:textColorHint="@color/white_color">
 
+                <EditText
+                    android:id="@+id/input_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
             <!-- Signup Button -->
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btn_signup"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg"
                 android:layout_marginTop="@dimen/_24sdp"
                 android:layout_marginBottom="@dimen/_24sdp"
                 android:padding="12dp"
+                android:textColor="@color/btn_txt_color"
                 android:text="Create Account" />
 
             <TextView
@@ -89,7 +109,7 @@
                 android:layout_marginBottom="@dimen/_24sdp"
                 android:gravity="center"
                 android:text="Already a member? Login"
-                android:textColor="@color/blue_color"
+                android:textColor="@color/white_color"
                 android:textSize="16sp" />
 
         </LinearLayout>
