@@ -9,15 +9,15 @@
     </style>
 
     <!-- For Text Input color. -->
-
-    <style name="WhiteTextInputLayout" parent="@android:style/TextAppearance">
-        <item name="android:textColor">#FFF</item>
+    <style name="FloatingLabel" parent="@android:style/TextAppearance" >
+        <item name="android:textColor">@color/white_color</item>
     </style>
-    <style name="AppFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
+    <!-- No Action Bar -->
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
 </resources>
+
