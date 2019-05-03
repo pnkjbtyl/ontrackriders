@@ -108,7 +108,5 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onComplete(String message) {
         Toasty.success(this,message).show();
-
-
     }
 }
