@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import com.ontrack.ontrackriders.R;
 import com.ontrack.ontrackriders.utils.CustomProgress;
+import com.ontrack.ontrackriders.utils.PasswordValidator;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
@@ -23,6 +25,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.editTextCpass) EditText etCpass;
     private static final String TAG="SignUpActivity";
     private CustomProgress customProgress;
+    private PasswordValidator passwordValidator;
     private SignupPresenter signupPresenter;
     private static final String EMAIL_PATTERN="^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
 
@@ -40,7 +43,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         ButterKnife.bind(this);
         buttonSignup.setOnClickListener(this);
         customProgress=CustomProgress.getInstance();
-        signupPresenter=new SignupPresenter();
+        signupPresenter=new SignupPresenter(this,this);
+        passwordValidator=new PasswordValidator();
     }
 
 
@@ -88,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         {
             Log.d(TAG,"Fields validated");
             Log.d(TAG,"Data Passed To Presenter");
-            //signupPresenter.requestRegister(name,email,password);
+            signupPresenter.requestRegister(name,email,password);
         }
 
 
