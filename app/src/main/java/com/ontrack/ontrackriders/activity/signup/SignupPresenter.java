@@ -1,4 +1,4 @@
-package com.ontrack.ontrackriders.activity.Signup;
+package com.ontrack.ontrackriders.activity.signup;
 
 import android.app.Activity;
 import android.util.Log;

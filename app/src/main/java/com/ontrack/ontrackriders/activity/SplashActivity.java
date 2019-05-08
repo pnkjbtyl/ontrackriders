@@ -7,8 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.ontrack.ontrackriders.R;
-import com.ontrack.ontrackriders.activity.Signup.SignUpActivity;
-import com.ontrack.ontrackriders.activity.home.HomeActivity;
+import com.ontrack.ontrackriders.activity.signup.SignUpActivity;
 
 public class SplashActivity extends AppCompatActivity {
     private static final String TAG="SplashActivity";
