@@ -39,12 +39,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void initViews() {
-        //initalising views
+        //initialising views
         ButterKnife.bind(this);
         buttonSignup.setOnClickListener(this);
         customProgress=CustomProgress.getInstance();
         signupPresenter=new SignupPresenter(this,this);
         passwordValidator=new PasswordValidator();
+        Log.d(TAG, "Signup Activity started");
     }
 
 
