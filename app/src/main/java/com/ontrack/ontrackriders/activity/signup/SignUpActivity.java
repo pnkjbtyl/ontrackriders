@@ -58,7 +58,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         String email=etEmail.getText().toString().trim();
         String password=etPass.getText().toString().trim();
         String confirm_password=etCpass.getText().toString().trim();
-        Log.d("TAG","Validating Fields");
+        Log.d(TAG,"Validating Fields");
 
         if(TextUtils.isEmpty(name))
         {

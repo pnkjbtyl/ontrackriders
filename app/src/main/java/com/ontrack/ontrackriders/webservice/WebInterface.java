@@ -1,5 +1,6 @@
 package com.ontrack.ontrackriders.webservice;
 
+import com.ontrack.ontrackriders.activity.login.LoginResponse;
 import com.ontrack.ontrackriders.activity.signup.SignupResponse;
 
 import okhttp3.RequestBody;
@@ -16,5 +17,11 @@ public interface WebInterface {
     Call<SignupResponse> requestSignup(
             @Part("email")RequestBody email, @Part("password") RequestBody password,@Part("name") RequestBody name);
 
+
+    //for signup
+    @Multipart
+    @POST("login")
+    Call<LoginResponse> requestLogin(
+            @Part("email")RequestBody email, @Part("password") RequestBody password);
 
 }

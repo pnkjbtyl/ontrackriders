@@ -1,9 +1,7 @@
 package com.ontrack.ontrackriders.activity.signup;
-
 import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.ontrack.ontrackriders.webservice.IBaseUrl;
 import com.ontrack.ontrackriders.webservice.Retro;
 import com.ontrack.ontrackriders.webservice.WebInterface;
@@ -48,7 +46,7 @@ public class SignupPresenter implements ISignupPresenter,IBaseUrl {
             public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
                 if(response.isSuccessful() && response.code()==200)
                 {
-                    //if code is 200 and response is successfull means the user is validated successfully
+                    //if code is 200 and response is successfull means the user is registered successfully
                     String resp = response.body().getData().toString();
                     Log.d("SignupActivity","RESPONSE FETCHED=> "+resp);
                     Log.d("SignupActivity","FETCHINg USER DETAILS");

@@ -5,25 +5,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg"
     android:gravity="center">
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:gravity="center"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/_minus30sdp"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:orientation="vertical"
         android:paddingLeft="@dimen/_24sdp"
+        android:paddingTop="@dimen/_56sdp"
         android:paddingRight="@dimen/_24sdp">
 
-        <ImageView android:src="@mipmap/ic_launcher"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_72sdp"
-            android:layout_marginBottom="@dimen/_24sdp"
+
+        <ImageView
+            android:layout_marginTop="@dimen/_25sdp"
+            android:src="@drawable/splash_logo"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
             android:layout_gravity="center_horizontal" />
 
         <!-- Email Label -->
@@ -32,11 +32,11 @@
             android:textColorHint="@color/white_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_8sdp">
             <EditText android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
                 android:inputType="textEmailAddress"
                 android:hint="Email" />
         </android.support.design.widget.TextInputLayout>
@@ -46,15 +46,14 @@
             app:hintTextAppearance="@style/FloatingLabel"
             android:textColorHint="@color/white_color"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginBottom="@dimen/_8sdp">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:textColor="@color/white_color"
                 android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>
 
@@ -64,7 +63,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
             android:layout_marginTop="@dimen/_24sdp"
-            android:layout_marginBottom="@dimen/_24sdp"
             android:padding="12dp"
             android:textColor="@color/btn_txt_color"
             android:text="Login"/>
@@ -72,6 +70,7 @@
         <TextView android:id="@+id/link_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_24sdp"
             android:text="No account yet? Create one"
             android:gravity="center"
@@ -79,5 +78,4 @@
             android:textSize="16sp"/>
 
     </LinearLayout>
-</ScrollView>
 </RelativeLayout>
