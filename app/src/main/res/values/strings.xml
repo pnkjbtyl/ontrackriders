@@ -3,14 +3,26 @@
     <string name="toolbar_title">Ontrack Riders</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
-    
+    <string name="country_prompt">Select bllod type</string>
+
+    <string-array name="spn_blood_type">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+
     <string-array name="type_of_body">
-        <item>Type of Body</item>
-        <item>Hatchback</item>
-        <item>Sedan</item>
-        <item>Coupe</item>
-        <item>SUV</item>
-        <item>Others</item>
+    <item>Type of Body</item>
+    <item>Hatchback</item>
+    <item>Sedan</item>
+    <item>Coupe</item>
+    <item>SUV</item>
+    <item>Others</item>
     </string-array>
 
     <string-array name="type_of_vehicle">
