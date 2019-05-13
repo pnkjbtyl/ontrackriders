@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="?actionBarSize"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_30sdp"
+        android:text="Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:id="@+id/btn_edit_profile"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_222sdp"
+        android:layout_marginEnd="@dimen/_100sdp"
+        android:background="@drawable/btn_bg"
+        android:text="Edit" />
+</RelativeLayout>

@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG="LoginActivity";
     @BindView(R.id.etEmail) EditText etEmail;
     @BindView(R.id.etPassword) EditText etPassword;
-    @BindView(R.id.btLogin) AppCompatButton btLogin;
+    @BindView(R.id.bt_login) AppCompatButton btLogin;
     private LoginPresenter loginPresenter;
     private CustomProgress customProgress;
     private static final String EMAIL_PATTERN="^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";

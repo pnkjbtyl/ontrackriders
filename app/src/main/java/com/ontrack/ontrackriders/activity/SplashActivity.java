@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.ontrack.ontrackriders.R;
+import com.ontrack.ontrackriders.activity.home.HomeActivity;
 import com.ontrack.ontrackriders.activity.login.LoginActivity;
 import com.ontrack.ontrackriders.activity.signup.SignUpActivity;
 
@@ -30,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //navigating to signup
-                Intent intent=new Intent(SplashActivity.this, LoginActivity.class);
+                Intent intent=new Intent(SplashActivity.this, HomeActivity.class);
                 startActivity(intent);
                 Log.d(TAG,"Navigation to signup activity success");
                 finish();
