@@ -14,12 +14,15 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.signup.SignUpActivity" />
         <activity android:name=".activity.login.LoginActivity" />
-        <activity
-            android:name=".activity.SplashActivity">
+        <activity android:name=".activity.VehicleRegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SplashActivity">
+
         </activity>
     </application>
 

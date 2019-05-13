@@ -12,6 +12,10 @@
     <style name="FloatingLabel" parent="@android:style/TextAppearance" >
         <item name="android:textColor">@color/white_color</item>
     </style>
+
+    <style name="FloatingLabelreg" parent="@android:style/TextAppearance" >
+        <item name="android:textColor">@color/btn_txt_color</item>
+    </style>
     <!-- No Action Bar -->
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

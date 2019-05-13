@@ -18,10 +18,12 @@ public interface WebInterface {
             @Part("email")RequestBody email, @Part("password") RequestBody password,@Part("name") RequestBody name);
 
 
-    //for signup
+    //for login
     @Multipart
     @POST("login")
     Call<LoginResponse> requestLogin(
             @Part("email")RequestBody email, @Part("password") RequestBody password);
+
+    //for Vehicle Registration
 
 }

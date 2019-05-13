@@ -3,4 +3,60 @@
     <string name="toolbar_title">Ontrack Riders</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    
+    <string-array name="type_of_body">
+        <item>Type of Body</item>
+        <item>Hatchback</item>
+        <item>Sedan</item>
+        <item>Coupe</item>
+        <item>SUV</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="type_of_vehicle">
+        <item>Type of Vehicle</item>
+        <item>Two Wheeler</item>
+        <item>Three Wheeler</item>
+        <item>Four Wheeler</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="seat_capacity">
+        <item>Seat capacity</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+
+    </string-array>
+
+    <string-array name="cc_array">
+        <item>Engine CC</item>
+        <item>100 CC</item>
+        <item>110 CC</item>
+        <item>125 CC</item>
+        <item>150 CC</item>
+
+    </string-array>
+
+    <string-array name="fuel_type">
+        <item>Fuel Type</item>
+        <item>Diesel</item>
+        <item>Petrol</item>
+        <item>Bio Diesel</item>
+        <item>CNG</item>
+        <item>Hydrogen</item>
+
+    </string-array>
+
+    <string-array name="interior_array">
+        <item>Interior</item>
+        <item>Poor</item>
+        <item>Moderate</item>
+        <item>Excellent</item>
+
+    </string-array>
+
+
 </resources>
