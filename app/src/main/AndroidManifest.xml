@@ -16,8 +16,7 @@
         <activity android:name=".activity.home.HomeActivity"/>
         <activity android:name=".activity.VehicleRegisterActivity"/>
         <activity android:name=".activity.signup.SignUpActivity" />
-        <activity android:name=".activity.login.LoginActivity" />
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

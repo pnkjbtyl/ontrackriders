@@ -5,6 +5,8 @@ import com.ontrack.ontrackriders.activity.signup.SignupResponse;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -12,6 +14,7 @@ import retrofit2.http.Part;
 public interface WebInterface {
 
     //for signup
+    @Headers("Content-Type: application/json")
     @Multipart
     @POST("signup")
     Call<SignupResponse> requestSignup(
@@ -19,10 +22,9 @@ public interface WebInterface {
 
 
     //for login
-    @Multipart
+    @Headers("Content-Type: application/json")
     @POST("login")
-    Call<LoginResponse> requestLogin(
-            @Part("email")RequestBody email, @Part("password") RequestBody password);
+    Call<LoginResponse> requestLogin(@Body RequestBody loginBody);
 
     //for Vehicle Registration
 

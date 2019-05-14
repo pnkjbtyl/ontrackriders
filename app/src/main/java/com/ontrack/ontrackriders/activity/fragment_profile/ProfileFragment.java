@@ -2,16 +2,17 @@ package com.ontrack.ontrackriders.activity.fragment_profile;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+
 
 import com.ontrack.ontrackriders.R;
 
@@ -19,7 +20,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
-    @BindView(R.id.btn_edit_profile) AppCompatButton btnEditProfile;
+    @BindView(R.id.btn_edit_profile)
+    AppCompatButton btnEditProfile;
     private static final String TAG="ProfileFragment";
     @Nullable
     @Override
