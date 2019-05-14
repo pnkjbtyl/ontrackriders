@@ -1,13 +1,14 @@
 package com.ontrack.ontrackriders.activity.login;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+
 
 import com.ontrack.ontrackriders.R;
 import com.ontrack.ontrackriders.utils.CustomProgress;
@@ -20,7 +21,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG="LoginActivity";
     @BindView(R.id.etEmail) EditText etEmail;
     @BindView(R.id.etPassword) EditText etPassword;
-    @BindView(R.id.btLogin) AppCompatButton btLogin;
+    @BindView(R.id.bt_login)
+    AppCompatButton btLogin;
     private LoginPresenter loginPresenter;
     private CustomProgress customProgress;
     private static final String EMAIL_PATTERN="^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";

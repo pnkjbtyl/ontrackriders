@@ -1,6 +1,7 @@
 package com.ontrack.ontrackriders.activity.signup;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
@@ -8,6 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+
+
+
 import com.ontrack.ontrackriders.R;
 import com.ontrack.ontrackriders.utils.CustomProgress;
 import com.ontrack.ontrackriders.utils.PasswordValidator;
@@ -18,7 +22,8 @@ import es.dmoral.toasty.Toasty;
 
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener,ISignupView {
-    @BindView(R.id.btn_signup) AppCompatButton buttonSignup;
+    @BindView(R.id.btn_signup)
+    AppCompatButton buttonSignup;
     @BindView(R.id.editTextName) EditText etName;
     @BindView(R.id.editTextEmail) EditText etEmail;
     @BindView(R.id.editTextPass) EditText etPass;
