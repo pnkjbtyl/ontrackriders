@@ -8,7 +8,7 @@
     android:background="@color/white_color"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp"
-    tools:context=".activity.VehicleRegisterActivity">
+    tools:context=".activity.vehicle_register.VehicleRegisterActivity">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintlayout"

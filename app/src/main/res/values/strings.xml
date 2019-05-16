@@ -17,12 +17,12 @@
     </string-array>
 
     <string-array name="type_of_body">
-    <item>Type of Body</item>
-    <item>Hatchback</item>
-    <item>Sedan</item>
-    <item>Coupe</item>
-    <item>SUV</item>
-    <item>Others</item>
+        <item>Type of Body</item>
+        <item>Hatchback</item>
+        <item>Sedan</item>
+        <item>Coupe</item>
+        <item>SUV</item>
+        <item>Others</item>
     </string-array>
 
     <string-array name="type_of_vehicle">
@@ -34,7 +34,7 @@
     </string-array>
 
     <string-array name="seat_capacity">
-        <item>Seat capacity</item>
+        <item>Seat Capacity</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
