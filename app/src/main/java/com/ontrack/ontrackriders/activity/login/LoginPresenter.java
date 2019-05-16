@@ -75,6 +75,9 @@ public class LoginPresenter implements ILoginPresenter, IBaseUrl, Callback<Login
             Pref.putUserName(activity,name);
             Pref.putUserEmail(activity,email);
             Pref.putToken(activity,token);
+            Log.d("LoginActivity","Saved Token=> "+token);
+            Log.d("LoginActivity","Saved Refresh Token=> "+refreshToken);
+
             Pref.putRefreshToken(activity,refreshToken);
             iLoginView.stopProgress();
             iLoginView.onComplete(message);

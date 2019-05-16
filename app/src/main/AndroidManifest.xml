@@ -5,18 +5,21 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
+        android:name="com.ontrack.ontrackriders.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activity.fragment_profile.EditProfileActivity"/>
         <activity android:name=".activity.home.HomeActivity"/>
+        <activity android:name=".activity.login.LoginActivity"/>
         <activity android:name=".activity.VehicleRegisterActivity"/>
-        <activity android:name=".activity.signup.SignUpActivity" />
-        <activity android:name=".activity.login.LoginActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.ontrack.ontrackriders.R;
+import com.ontrack.ontrackriders.utils.Pref;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -27,9 +28,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 
-public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener,IEditProfileView {
     private static final String TAG="EditProfileActivity";
     private int mYear, mMonth, mDay;
+    private EditProfilePresenter editProfilePresenter;
     @BindView(R.id.editTextProfileName)
     EditText etName;
     @BindView(R.id.editTextProfileAge)
@@ -134,6 +136,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
     private void initViews() {
         //initialising views
+         editProfilePresenter=new EditProfilePresenter(this,this);
         ButterKnife.bind(this);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         Log.d(TAG, "Edit Profile Activity started");
@@ -161,6 +164,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     private void validateFields() {
         //now we will validate all fields
         String name=etName.getText().toString();
+        String age=etAge.getText().toString().trim();
         String dob=etDob.getText().toString();
         String loc=etLocation.getText().toString().trim();
         String dlNo=etDrivingLicense.getText().toString().trim();
@@ -223,7 +227,11 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         }
         else
         {
-            Log.d(TAG,"Success");
+            Log.d(TAG,"Fields validated");
+            Log.d(TAG,"Data Passed To Presenter");
+            editProfilePresenter.requestEditProfile(name,dob,age,loc,dlNo,idNo,gender,blood_group,marital_status,
+                    smoke,drink,specs);
+
         }
 
     }
@@ -295,5 +303,19 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
     }
 
+    @Override
+    public void startProgress() {
+
+    }
+
+    @Override
+    public void stopProgress() {
+
+    }
+
+    @Override
+    public void onComplete(String message) {
+
+    }
 }
 
