@@ -1,4 +1,5 @@
 package com.ontrack.ontrackriders.activity.login;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 
 
 import com.ontrack.ontrackriders.R;
+import com.ontrack.ontrackriders.activity.VehiclesList;
 import com.ontrack.ontrackriders.utils.CustomProgress;
 
 import butterknife.BindView;
@@ -20,7 +22,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG="LoginActivity";
     @BindView(R.id.etEmail) EditText etEmail;
     @BindView(R.id.etPassword) EditText etPassword;
-    @BindView(R.id.btn_login)
+    @BindView(R.id.bt_login)
     AppCompatButton btLogin;
     private LoginPresenter loginPresenter;
     private CustomProgress customProgress;
@@ -90,5 +92,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onComplete(String message) {
         Toasty.success(this,message).show();
+        Intent intent = new Intent(this, VehiclesList.class);
+        startActivity(intent);
     }
 }

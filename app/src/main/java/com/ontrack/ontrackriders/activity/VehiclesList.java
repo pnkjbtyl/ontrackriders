@@ -29,6 +29,8 @@ public class VehiclesList extends AppCompatActivity {
 
     private static final String URL = "http://192.168.1.5:3000/vehicles";
 
+
+
     private RecyclerView vehicleslist;
     private RecyclerView.Adapter vehiclesAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -94,7 +96,7 @@ public class VehiclesList extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
                         Toast.makeText(VehiclesList.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                        Log.d("Error is ",error.getMessage());
+
 
                     }
                 });

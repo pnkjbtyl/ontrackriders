@@ -34,7 +34,4 @@ public interface WebInterface {
     @POST("/vehicle/registration")
     Call<VehicleRegisterResponse> requestVehicleReg(@Body RequestBody vehiclereg_body);
 
-    @Headers({"\"Content-Type: application/json"})
-    @GET("users")
-    Call<List<ResponseBody>> response(@Body RequestQueue requestQueue);
 }
