@@ -18,7 +18,6 @@
         <activity android:name=".activity.fragment_profile.EditProfileActivity"/>
         <activity android:name=".activity.home.HomeActivity"/>
         <activity android:name=".activity.login.LoginActivity"/>
-        <activity android:name=".activity.VehicleRegisterActivity"/>
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

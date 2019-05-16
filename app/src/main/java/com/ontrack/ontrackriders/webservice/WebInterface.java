@@ -30,20 +30,13 @@ public interface WebInterface {
     @POST("login")
     Call<LoginResponse> requestLogin(@Body RequestBody loginBody);
     //for profile update
-    @Headers({"Content-Type: application/json","x-access-code:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY0AxMjMuY29tIiwiaWQiOjcwLCJuYW1lIjoia2F1IiwiaWF0IjoxNTU4MDA1MjAyLCJleHAiOjE1NTgwOTE2MDJ9.F31tgeq6M4YPDe63nwiFt31KOCKNQjwrFvDcH2kXgqg"})
-    @POST("users/update")
+    @Headers("Content-Type: application/json")
+    @PUT("users/update")
     Call<EditProfileResponse> requestUpdateProfile(@Body RequestBody editProfileBody);
 
     //for Vehicle Registration
     @Multipart
-    @PUT("/vehicle/registration")
-    Call<ResponseBody> requestVehicleReg(
-            @Part("registration_no") RequestBody reg_no_string, @Part("registrant_name") RequestBody reg_name_string,
-            @Part("make") RequestBody make_string,@Part("vehicle_type") RequestBody type_veh_string,
-            @Part("body_type")RequestBody type_body_string,@Part("model") RequestBody model_string,
-            @Part("model_year") RequestBody modelyear_string, @Part("color") RequestBody color_string,
-            @Part("seat_capacity") RequestBody seat_cap_string,@Part("engine_cc") RequestBody engine_cc_string,
-            @Part("fuel_type") RequestBody fuel_type_string,@Part("interior") RequestBody interior_string,
-            @Part("pets_allowed") RequestBody pets_string,@Part("music_allowed") RequestBody music_string,
-            @Part("smoking_allowed") RequestBody smoke_string);
+    @Headers({"Content-Type: application/json"})
+    @POST("/vehicle/registration")
+    Call<ResponseBody> requestVehicleReg(@Body RequestBody vehiclereg_body);
 }
