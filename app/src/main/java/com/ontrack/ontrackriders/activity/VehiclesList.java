@@ -58,7 +58,7 @@ public class VehiclesList extends AppCompatActivity {
         progressDialog.setMessage("Loading Data....");
         progressDialog.show();
 
-        
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
