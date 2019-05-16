@@ -20,7 +20,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
+/*
     @BindView(R.id.btn_edit_profile)
+*/
     AppCompatButton btnEditProfile;
     private static final String TAG="ProfileFragment";
     @Nullable
@@ -28,7 +30,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG,"Opened Profile Fragment");
         View view= inflater.inflate(R.layout.fragment_profile,container,false);
+/*
         ButterKnife.bind(this,view);
+*/
         return view;
 
     }
@@ -36,7 +40,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+/*
         btnEditProfile.setOnClickListener(this);
+*/
 
 
     }

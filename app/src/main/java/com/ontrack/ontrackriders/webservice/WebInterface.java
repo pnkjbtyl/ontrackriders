@@ -21,11 +21,8 @@ public interface WebInterface {
 
     //for signup
     @Headers("Content-Type: application/json")
-    @Multipart
     @POST("signup")
-    Call<SignupResponse> requestSignup(
-            @Part("email")RequestBody email, @Part("password") RequestBody password,@Part("name") RequestBody name);
-
+    Call<SignupResponse> requestSignup(@Body RequestBody signupBody);
 
     //for login
     @Headers("Content-Type: application/json")

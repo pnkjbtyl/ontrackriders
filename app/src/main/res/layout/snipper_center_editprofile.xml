@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,13 +23,41 @@
                 app:hintTextAppearance="@style/FloatingLabelreg">
 
                 <EditText
-                    android:id="@+id/editTextName"
+                    android:id="@+id/editTextProfileName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name"
                     android:inputType="textPersonName" />
             </android.support.design.widget.TextInputLayout>
+            <!-- DOB Label -->
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/btn_txt_color"
+                app:hintTextAppearance="@style/FloatingLabelreg">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/editTextProfileDob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DOB"
+                    android:inputType="date"
+                    android:textColorHint="@color/btn_txt_color" />
+
+                    <ImageView
+                        android:id="@+id/imgDob"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignStart="@+id/editTextProfileDob"
+                        android:layout_marginStart="261dp"
+                        android:background="@drawable/ic_date_range_black_24dp" />
+                </RelativeLayout>
+
+            </android.support.design.widget.TextInputLayout>
             <!-- Age Label -->
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -42,24 +70,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Age"
+                    android:enabled="false"
                     android:inputType="textEmailAddress"
-                    android:textColorHint="@color/btn_txt_color" />
-            </android.support.design.widget.TextInputLayout>
-
-            <!-- DOB Label -->
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="@color/btn_txt_color"
-                app:hintTextAppearance="@style/FloatingLabelreg">
-
-                <EditText
-                    android:id="@+id/editTextProfileDob"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="DOB"
-                    android:inputType="date"
-                    android:textColorHint="@color/btn_txt_color" />
+                    android:textColorHint="@color/btn_txt_color"
+                    tools:ignore="Deprecated" />
             </android.support.design.widget.TextInputLayout>
 
             <!-- Location Label -->
@@ -74,7 +88,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Location"
-                    android:inputType="textPassword"
+                    android:inputType="textPostalAddress"
                     android:textColor="@color/btn_txt_color" />
             </android.support.design.widget.TextInputLayout>
             <!-- Driving Label -->
@@ -89,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Driving License No"
-                    android:inputType="textPassword"
+                    android:inputType="number"
                     android:textColorHint="@color/btn_txt_color" />
             </android.support.design.widget.TextInputLayout>
             <!-- Adhaar Number-->
@@ -104,7 +118,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Identification No"
-                    android:inputType="textPassword"
+                    android:inputType="number"
                     android:textColorHint="@color/btn_txt_color" />
             </android.support.design.widget.TextInputLayout>
             <!-- Gender Radio Button-->
@@ -136,29 +150,30 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/radio_gender"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true">
 
                 <RadioButton
-                    android:id="@+id/radioButton9"
+                    android:id="@+id/radioButtonMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="M"
                     android:textColor="@color/btn_txt_color" />
 
                 <RadioButton
-                    android:id="@+id/radioButton10"
+                    android:id="@+id/radioButtonFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="F"
                     android:textColor="@color/btn_txt_color" />
             </RadioGroup>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:hint="Gender"
+            android:textColorHint="@color/btn_txt_color"
+            android:id="@+id/textViewGender"
             android:layout_weight="1"
             android:gravity="end"
             android:textColor="@color/btn_txt_color" />
@@ -182,7 +197,7 @@
                 android:weightSum="2">
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/spinnerBloodGroup"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -193,6 +208,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
+                    android:id="@+id/textViewBloodGroup"
                     android:textColorHint="@color/btn_txt_color"
                     android:hint="AB+"
                     android:padding="@dimen/_5sdp"
@@ -219,29 +235,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.9"
+                android:id="@+id/radio_marital_status"
                 android:layout_centerHorizontal="true"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton7"
+                    android:id="@+id/radioButtonMarried"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="Married"
                     android:textColor="@color/btn_txt_color" />
 
                 <RadioButton
-                    android:id="@+id/radioButton8"
+                    android:id="@+id/radioButtonSingle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
-                    android:text="Unmarried"
+                    android:text="Single"
                     android:textColor="@color/btn_txt_color" />
             </RadioGroup>
         <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="unmarried"
+        android:hint="single"
+        android:textColorHint="@color/btn_txt_color"
+        android:id="@+id/textViewMarital"
         android:layout_weight="1.1"
         android:gravity="end"
         android:textColor="@color/btn_txt_color" />
@@ -264,6 +281,7 @@
         android:weightSum="2">
 
             <RadioGroup
+                android:id="@+id/radio_smoke"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -274,7 +292,6 @@
                     android:id="@+id/radioButton1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="Yes"
                     android:textColor="@color/btn_txt_color" />
 
@@ -282,14 +299,15 @@
                     android:id="@+id/radioButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="No"
                     android:textColor="@color/btn_txt_color" />
             </RadioGroup>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Smoke"
+            android:hint="Smoke"
+            android:textColorHint="@color/btn_txt_color"
+            android:id="@+id/textViewSmoke"
             android:gravity="end"
             android:layout_weight="1"
             android:textColor="@color/btn_txt_color" />
@@ -310,6 +328,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:weightSum="2">
             <RadioGroup
+                android:id="@+id/radio_drink"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -320,7 +339,6 @@
                     android:id="@+id/radioButton3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="Yes"
                     android:textColor="@color/btn_txt_color" />
 
@@ -328,15 +346,16 @@
                     android:id="@+id/radioButton4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="No"
                     android:textColor="@color/btn_txt_color" />
             </RadioGroup>
         <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Drink"
+        android:hint="Drink"
+        android:textColorHint="@color/btn_txt_color"
         android:gravity="end"
+        android:id="@+id/textViewDrink"
         android:layout_weight="1"
         android:textColor="@color/btn_txt_color" />
     </LinearLayout>
@@ -358,6 +377,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:weightSum="2">
             <RadioGroup
+                android:id="@+id/radio_specs"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -369,7 +389,6 @@
                     android:id="@+id/radioButton5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="Yes"
                     android:textColor="@color/btn_txt_color" />
 
@@ -377,18 +396,18 @@
                     android:id="@+id/radioButton6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="radioButtonClicked"
                     android:text="No"
                     android:textColor="@color/btn_txt_color" />
             </RadioGroup>
         <TextView
+        android:id="@+id/textViewSpec"
         android:layout_width="0dp"
+        android:textColorHint="@color/btn_txt_color"
         android:layout_height="wrap_content"
-        android:text="spec"
+        android:hint="spec"
         android:gravity="end"
         android:layout_weight="1"
         android:textColor="@color/btn_txt_color" />
     </LinearLayout>
-
         </LinearLayout>
 </ScrollView>

@@ -3,13 +3,9 @@ package com.ontrack.ontrackriders.webservice;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-
 import static com.ontrack.ontrackriders.webservice.IBaseUrl.BASE_URL;
-
-public class Retro {
-
+public class Retro  {
     private static Retrofit retrofit = null;
-
     public static Retrofit getClient()
     {   if(retrofit== null)
     {
@@ -23,4 +19,7 @@ public class Retro {
 
 
     }
-}
+
+
+    }
+

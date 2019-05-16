@@ -39,7 +39,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         initViews();
     }
 
@@ -50,6 +49,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         customProgress=CustomProgress.getInstance();
         signupPresenter=new SignupPresenter(this,this);
         passwordValidator=new PasswordValidator();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         Log.d(TAG, "Signup Activity started");
     }
 
