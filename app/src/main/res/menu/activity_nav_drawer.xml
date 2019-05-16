@@ -15,7 +15,7 @@
             android:title="Vehicle" />
         <item
             android:icon="@drawable/ic_directions_black_24dp"
-            android:id="@+id/routes"
+            android:id="@+id/nav_routes"
             android:title="Routes" />
 
         <item

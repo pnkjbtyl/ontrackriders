@@ -14,7 +14,10 @@ import android.view.MenuItem;
 
 
 import com.ontrack.ontrackriders.R;
+import com.ontrack.ontrackriders.activity.fragment_home.HomeFragment;
 import com.ontrack.ontrackriders.activity.fragment_profile.ProfileFragment;
+import com.ontrack.ontrackriders.activity.fragment_routes.RouteFragment;
+import com.ontrack.ontrackriders.activity.fragment_vehicle.VehicleFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
@@ -64,8 +67,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
                     new ProfileFragment()).commit();
         }
-
-
+       else if(item.getItemId()==R.id.nav_home)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
+                    new HomeFragment()).commit();
+        }
+       else if(item.getItemId()==R.id.nav_routes)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
+                    new RouteFragment()).commit();
+        }
+      else  if(item.getItemId()==R.id.nav_vehicle)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
+                    new VehicleFragment()).commit();
+        }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

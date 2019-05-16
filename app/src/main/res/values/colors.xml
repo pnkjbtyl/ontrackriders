@@ -8,6 +8,8 @@
     <color name="blue_color">#3949AB</color>
     <color name="btn_txt_color">#7F24B5</color>
     <color name="grey">#bfbfbf</color>
+    <color name="startblue">#00ACC1</color>
+    <color name="endblue">#1E88E5</color>
 
 
 </resources>

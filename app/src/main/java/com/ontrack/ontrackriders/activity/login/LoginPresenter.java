@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.ontrack.ontrackriders.utils.Pref;
 import com.ontrack.ontrackriders.webservice.IBaseUrl;
 import com.ontrack.ontrackriders.webservice.Retro;
 import com.ontrack.ontrackriders.webservice.WebInterface;
@@ -70,6 +71,11 @@ public class LoginPresenter implements ILoginPresenter, IBaseUrl, Callback<Login
             Log.d("LoginActivity", "DETAILS FETCHED => " + "Name: " + name + "\n" + "Email:" + email + "\n" +
                     "Token: " + token + "\n" + "RefreshToken: " + refreshToken);
             Log.d("LoginActivity", "User Login successful");
+            //now saving user info and token into local storage
+            Pref.putUserName(activity,name);
+            Pref.putUserEmail(activity,email);
+            Pref.putToken(activity,token);
+            Pref.putRefreshToken(activity,refreshToken);
             iLoginView.stopProgress();
             iLoginView.onComplete(message);
         } else if (response.code() == 401) {
@@ -78,13 +84,16 @@ public class LoginPresenter implements ILoginPresenter, IBaseUrl, Callback<Login
                 JSONObject jObjError = new JSONObject(response.errorBody().string());
                 Toasty.info(activity, jObjError.getString("message")).show();
                 Log.d("LoginActivity", jObjError.getString("message"));
+                iLoginView.stopProgress();
             } catch (Exception e) {
                 Toast.makeText(activity, e.getMessage(), Toast.LENGTH_LONG).show();
+                iLoginView.stopProgress();
             }
 
 
         }
         else {
+            iLoginView.stopProgress();
             try {
             JSONObject jObjError = new JSONObject(response.errorBody().string());
             Toasty.info(activity, jObjError.getString("message")).show();
