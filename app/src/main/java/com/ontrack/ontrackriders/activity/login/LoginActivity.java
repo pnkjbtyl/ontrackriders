@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG="LoginActivity";
     @BindView(R.id.etEmail) EditText etEmail;
     @BindView(R.id.etPassword) EditText etPassword;
-    @BindView(R.id.bt_login)
+    @BindView(R.id.btn_login)
     AppCompatButton btLogin;
     private LoginPresenter loginPresenter;
     private CustomProgress customProgress;
