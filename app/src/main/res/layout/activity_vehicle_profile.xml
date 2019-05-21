@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/white_color"
+    tools:context=".activity.vehicle_register.VehicleProfileActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/_minus30sdp"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:paddingTop="@dimen/_10sdp"
+        >
+
+        <TextView
+            android:id="@+id/vehicle_info_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle Information"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textColor="@color/btn_txt_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="@dimen/_25sdp"
+            android:gravity="center"/>
+
+
+
+        <!--Registration Number Label-->
+
+        <TextView
+            android:id="@+id/reg_no_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration No : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vehicle_info_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/reg_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vehicle_info_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <!--Registrant Name Label-->
+
+        <TextView
+            android:id="@+id/reg_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrant Name : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reg_no_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/reg_name_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrant Name"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reg_no_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/make_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reg_name_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/make_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Data "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reg_name_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/type_veh_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Vehicle : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/make_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/type_veh_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Vehicle Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/make_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/type_body_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Body : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_veh_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/type_body_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Body Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_veh_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/model_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model  : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_body_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/model_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_body_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/modelyear_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model Year : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/model_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/modelyear_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model Year Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/model_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/color_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modelyear_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/color_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modelyear_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/seat_cap_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seat Capacity : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/color_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/seat_cap_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seat Capacity Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/color_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+
+        <TextView
+            android:id="@+id/engine_cc_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engine CC : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seat_cap_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/engine_cc_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engine CC Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seat_cap_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/fuel_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuel Type : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/engine_cc_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/fuel_type_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuel Type Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/engine_cc_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/interior_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interior Quality : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fuel_type_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/interior_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interior Quality Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fuel_type_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/pets_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pets Allowed : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interior_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/pets_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pets Allowed Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interior_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/music_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Music Allowed : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pets_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/music_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Music Allowed Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pets_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/smoke_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smoke Allowed : "
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/music_text"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/smoke_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smoke Allowed Data"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/music_data"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"/>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

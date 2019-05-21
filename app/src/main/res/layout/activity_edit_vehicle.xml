@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/white_color"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp"
+    tools:context=".activity.vehicle_register.EditVehicleActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/_minus30sdp"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:paddingTop="@dimen/_10sdp"
+        >
+        <TextView
+            android:id="@+id/edit_vehicle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Vehicle"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textColor="@color/btn_txt_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="@dimen/_25sdp"
+            android:gravity="center"/>
+
+
+
+        <!--Registration Number Label-->
+
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:id="@+id/editTextRno_des"
+            android:textColorHint="@color/btn_txt_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@+id/edit_vehicle_text">
+            <EditText android:id="@+id/editTextRno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="Reg. No." />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--Registrant Name Label-->
+
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:id="@+id/editTextRn_des"
+            android:textColorHint="@color/btn_txt_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRno_des"
+            android:layout_marginBottom="@dimen/_8sdp">
+            <EditText android:id="@+id/editTextRn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/btn_txt_color"
+                android:inputType="textEmailAddress"
+                android:hint="Registrant Name" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:textColorHint="@color/btn_txt_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:id="@+id/editTextmake_des"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRn_des"
+            android:layout_marginBottom="@dimen/_8sdp">
+            <EditText android:id="@+id/editTextmake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/btn_txt_color"
+                android:inputType="textEmailAddress"
+                android:hint="Make" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/typeveh_spinner"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextmake_des"
+            android:entries="@array/type_of_vehicle"
+            />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:id="@+id/typebody_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/typeveh_spinner"
+            android:entries="@array/type_of_body"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:textColorHint="@color/btn_txt_color"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_height="wrap_content"
+            android:id="@+id/etmodel_des"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/typebody_spinner"
+            app:layout_constraintRight_toLeftOf="@+id/etmodelyear_des"
+            android:layout_marginBottom="@dimen/_8sdp">
+            <EditText android:id="@+id/etmodel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/btn_txt_color"
+                android:inputType="textEmailAddress"
+                android:hint="Model" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:textColorHint="@color/btn_txt_color"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:id="@+id/etmodelyear_des"
+            app:layout_constraintLeft_toRightOf="@+id/etmodel_des"
+            app:layout_constraintTop_toBottomOf="@+id/typebody_spinner"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <EditText
+                android:id="@+id/etmodelyear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Model Year"
+                android:inputType="number"
+                android:textColor="@color/btn_txt_color" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:textColorHint="@color/btn_txt_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:id="@+id/etcolor_des"
+            app:layout_constraintTop_toBottomOf="@+id/etmodelyear_des"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <EditText
+                android:id="@+id/etcolor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Color"
+                android:inputType="textPersonName"
+                android:textColor="@color/btn_txt_color" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/seatcap_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/etcolor_des"
+            app:layout_constraintRight_toLeftOf="@+id/cc_spinner"
+            android:entries="@array/seat_capacity"
+            />
+
+        <Spinner
+            android:id="@+id/cc_spinner"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etcolor_des"
+            app:layout_constraintLeft_toRightOf="@+id/seatcap_spinner"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:entries="@array/cc_array"
+            />
+        <Spinner
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/fueltype_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/seatcap_spinner"
+            app:layout_constraintRight_toLeftOf="@+id/interior_spinner"
+            android:entries="@array/fuel_type"
+            />
+
+        <Spinner
+            android:id="@+id/interior_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/cc_spinner"
+            app:layout_constraintLeft_toRightOf="@+id/fueltype_spinner"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:entries="@array/interior_array"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pets Allowed?"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fueltype_spinner"
+            android:id="@+id/pets"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/btn_txt_color"/>
+
+        <RadioGroup
+            android:id="@+id/petsgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:layout_marginRight="@dimen/_30sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fueltype_spinner"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:id="@+id/petsyes"
+                android:textSize="@dimen/_12sdp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:id="@+id/petsno"
+                android:textSize="@dimen/_12sdp"/>
+
+
+        </RadioGroup>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Music Allowed?"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pets"
+            android:id="@+id/music"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/btn_txt_color"/>
+
+        <RadioGroup
+            android:id="@+id/musicgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/petsgroup"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:id="@+id/musicyes"
+                android:textSize="@dimen/_12sdp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:id="@+id/musicno"
+                android:textSize="@dimen/_12sdp"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smoking Allowed?"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/music"
+            android:id="@+id/smoke"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/btn_txt_color"/>
+
+        <RadioGroup
+            android:id="@+id/smokegroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:orientation="horizontal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/musicgroup"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:id="@+id/smokeyes"
+                android:textSize="@dimen/_12sdp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:id="@+id/smokeno"
+                android:textSize="@dimen/_12sdp"/>
+
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/veh_reg_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@color/btn_txt_color"
+            app:layout_constraintTop_toBottomOf="@+id/smoke"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Update  Vehicle"
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/_12sdp"/>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
