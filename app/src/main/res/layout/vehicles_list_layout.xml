@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Registration No."
         android:id="@+id/veh_regno"
-        android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:textSize="@dimen/_22sdp"
         android:padding="@dimen/_15sdp"
         android:textColor="#000000"
@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/_15sdp"
+        android:textColor="#000"
         android:gravity="center"
         android:text="Maker"
         android:layout_alignParentLeft="true"
@@ -48,6 +49,7 @@
         android:layout_alignParentRight="true"
         android:padding="@dimen/_15sdp"
         android:text="Model"
+        android:textColor="#000"
         android:textSize="@dimen/_15sdp" />
 
     <TextView
@@ -57,6 +59,7 @@
         android:padding="@dimen/_8sdp"
         android:text="Model Year"
         android:gravity="center"
+        android:textColor="#000"
         android:textSize="@dimen/_10sdp"
         android:layout_toRightOf="@+id/veh_regno"
         />
