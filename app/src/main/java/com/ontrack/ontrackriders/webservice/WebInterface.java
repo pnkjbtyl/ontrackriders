@@ -1,5 +1,6 @@
 package com.ontrack.ontrackriders.webservice;
 
+import com.ontrack.ontrackriders.activity.VehicleResponse;
 import com.ontrack.ontrackriders.activity.edit_profile.EditProfileResponse;
 import com.ontrack.ontrackriders.activity.fragment_profile.FetchProfileResponse;
 import com.ontrack.ontrackriders.activity.fragment_profile.ProfilePicResponse;
@@ -51,4 +52,7 @@ public interface WebInterface {
     @Headers({"Content-Type: application/json"})
     @POST("/vehicle/registration")
     Call<ResponseBody> requestVehicleReg(@Body RequestBody vehiclereg_body);
+    @Headers({"Content-Type: application/json"})
+    @GET("vehicles")
+    Call<VehicleResponse> getVehicleData();
 }
