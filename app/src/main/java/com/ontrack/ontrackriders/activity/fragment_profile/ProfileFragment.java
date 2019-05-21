@@ -188,7 +188,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener,IF
         super.onResume();
         Log.d(TAG,"On Resume Method Called");
         fetchprofile();
-        setProfilePic();
     }
 
     /*---------------------------------------CROP IMAGE HANDLING-------------------------------------------*/
@@ -232,15 +231,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener,IF
     @Override
     public void onComplete(String message) {
         Toasty.success(MyApp.getContext(),message).show();
-        setProfilePic();
+        //setProfilePic();
 
     }
 
     private void setProfilePic()
     {
         String profilePicId= Pref.getUserProfilePicId(MyApp.getContext());
-        if(profilePicId.length()>0) {
-            Log.d(TAG, "Profile pic id: " + profilePicId);
+        Log.d(TAG, "Profile pic id: " + profilePicId);
             GlideUrl glideUrl = new GlideUrl(GET_PROFILE_PIC + "462",
                     new LazyHeaders.Builder()
                             .addHeader("x-access-code", Pref.getUserToken(MyApp.getContext()))
@@ -251,5 +249,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener,IF
                     .diskCacheStrategy(DiskCacheStrategy.DATA)
                     .into(imageViewProfilePic);
         }
-    }
+
+
 }

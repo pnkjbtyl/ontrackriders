@@ -6,6 +6,7 @@ import com.ontrack.ontrackriders.activity.fragment_profile.FetchProfileResponse;
 import com.ontrack.ontrackriders.activity.fragment_profile.ProfilePicResponse;
 import com.ontrack.ontrackriders.activity.login.LoginResponse;
 import com.ontrack.ontrackriders.activity.signup.SignupResponse;
+import com.ontrack.ontrackriders.activity.vehicle_register.VehicleRegisterResponse;
 
 import java.util.List;
 
@@ -48,10 +49,9 @@ public interface WebInterface {
     @GET("users")
     Call<FetchProfileResponse> requestFetchProfile();
     //for Vehicle Registration
-    @Multipart
     @Headers({"Content-Type: application/json"})
-    @POST("/vehicle/registration")
-    Call<ResponseBody> requestVehicleReg(@Body RequestBody vehiclereg_body);
+    @POST("vehicles/add")
+    Call<VehicleRegisterResponse> requestVehicleReg(@Body RequestBody vehiclereg_body);
     @Headers({"Content-Type: application/json"})
     @GET("vehicles")
     Call<VehicleResponse> getVehicleData();

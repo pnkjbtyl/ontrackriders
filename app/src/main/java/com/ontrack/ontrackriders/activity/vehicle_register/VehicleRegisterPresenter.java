@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.ontrack.ontrackriders.webservice.IBaseUrl;
+import com.ontrack.ontrackriders.webservice.Ret;
 import com.ontrack.ontrackriders.webservice.Retro;
 import com.ontrack.ontrackriders.webservice.WebInterface;
 
@@ -33,7 +34,7 @@ public class VehicleRegisterPresenter implements IVehicleRegisterPresenter, IBas
     public void requestVehicleRegister(String reg_no, String reg_name, String make, String type_veh, String type_body,
                                        String model, String model_year, String color, String seat_cap, String engine_cc,
                                        String fuel_type, String interior, String pets, String music, String smoke) {
-        WebInterface webInterface= Retro.getClient().create(WebInterface.class);
+        WebInterface webInterface= Ret.getClient().create(WebInterface.class);
         try {
             JSONObject paramObject = new JSONObject();
             paramObject.put("registration_no", reg_no);

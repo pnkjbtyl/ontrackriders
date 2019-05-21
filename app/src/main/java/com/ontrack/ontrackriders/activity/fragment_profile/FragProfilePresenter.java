@@ -65,9 +65,9 @@ public class FragProfilePresenter implements IFragProfilePresenter, Callback<Pro
             Log.d("ProfileFragment", "Updated profile image completed");
             message = response.body().getMessage();
             Log.d("ProfileFragment", "Message: " + message);
-            String profile_id=response.body().getData().getId().toString();
-            Log.d(TAG,"Profile Pic Id=> "+profile_id);
-            Pref.putUserProfilePicId(MyApp.getContext(),profile_id);
+            //String profile_id= String.valueOf(response.body().getData().getId());
+            //Log.d(TAG,"Profile Pic Id=> "+profile_id);
+            //Pref.putUserProfilePicId(MyApp.getContext(),profile_id);
             iFragProfileView.onComplete("Profile Pic Changed");
         } else if (response.code() == 401) {
             try {

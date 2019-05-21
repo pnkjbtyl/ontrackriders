@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.ontrack.ontrackriders.R;
 
-import java.util.ArrayList;
 
 public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesViewHolder> {
 
@@ -47,5 +46,6 @@ public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesViewHolder> {
     public int getItemCount()
     {
             return pojos.getData().size();
+
     }
 }

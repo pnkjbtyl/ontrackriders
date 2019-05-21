@@ -22,6 +22,7 @@
         <activity android:name=".activity.home.HomeActivity" />
         <activity android:name=".activity.login.LoginActivity" />
         <activity android:name=".activity.signup.SignUpActivity" />
+        <activity android:name=".activity.vehicle_register.VehicleRegisterActivity"/>
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

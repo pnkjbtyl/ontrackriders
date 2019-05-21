@@ -287,5 +287,6 @@ public class VehicleRegisterActivity extends AppCompatActivity implements IVehic
     @Override
     public void onComplete(String message) {
         Toasty.success(this,message).show();
+        finish();
     }
 }
