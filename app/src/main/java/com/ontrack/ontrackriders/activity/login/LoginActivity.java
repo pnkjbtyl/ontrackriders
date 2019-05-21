@@ -1,4 +1,5 @@
 package com.ontrack.ontrackriders.activity.login;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -6,12 +7,15 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
-
+import android.widget.TextView;
 
 import com.ontrack.ontrackriders.R;
+import com.ontrack.ontrackriders.activity.home.HomeActivity;
+import com.ontrack.ontrackriders.activity.signup.SignUpActivity;
 import com.ontrack.ontrackriders.utils.CustomProgress;
-
+import com.ontrack.ontrackriders.utils.Pref;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
@@ -21,7 +25,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.etEmail) EditText etEmail;
     @BindView(R.id.etPassword) EditText etPassword;
     @BindView(R.id.bt_login)
-    AppCompatButton btLogin;
+    Button btLogin;
+    @BindView(R.id.textViewSignup)
+    TextView textViewSignup;
+    private static String USER_EMAIL;
     private LoginPresenter loginPresenter;
     private CustomProgress customProgress;
     private static final String EMAIL_PATTERN="^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
@@ -33,20 +40,38 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         initViews();
+        checkUser();
     }
-
+    private void checkUser() {
+        Log.d(TAG,"Checking user is logged in info");
+        USER_EMAIL= Pref.getUserEmail(this);
+        if(USER_EMAIL==null)
+        {
+            Log.d(TAG,"No one is logged in=> "+USER_EMAIL);
+        }
+        }
     private void initViews() {
         //initialising views
         Log.d(TAG,"Login Activity Started");
         ButterKnife.bind(this);
         loginPresenter=new LoginPresenter(this,this);
         btLogin.setOnClickListener(this);
+        textViewSignup.setOnClickListener(this);
         customProgress=CustomProgress.getInstance();
     }
 
     @Override
     public void onClick(View v) {
-        validateFields();
+        if(v.getId()==R.id.bt_login)
+        {
+            validateFields();
+
+        }
+        else if(v.getId()==R.id.textViewSignup)
+        {
+            startActivity(new Intent(this, SignUpActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
     }
 
     private void validateFields() {
@@ -90,5 +115,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onComplete(String message) {
         Toasty.success(this,message).show();
+        Intent intent=new Intent(this, HomeActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 }

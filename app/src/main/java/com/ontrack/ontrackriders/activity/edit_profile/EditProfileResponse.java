@@ -1,4 +1,4 @@
-package com.ontrack.ontrackriders.activity.fragment_profile;
+package com.ontrack.ontrackriders.activity.edit_profile;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

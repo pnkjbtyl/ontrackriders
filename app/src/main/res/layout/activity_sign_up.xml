@@ -6,7 +6,6 @@
     android:background="@drawable/bg"
     android:gravity="center">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

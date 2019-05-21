@@ -1,5 +1,6 @@
 package com.ontrack.ontrackriders.activity.signup;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 
 
 import com.ontrack.ontrackriders.R;
+import com.ontrack.ontrackriders.activity.home.HomeActivity;
 import com.ontrack.ontrackriders.utils.CustomProgress;
 import com.ontrack.ontrackriders.utils.PasswordValidator;
 
@@ -117,5 +119,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onComplete(String message) {
         Toasty.success(this,message).show();
+        Intent intent=new Intent(this, HomeActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 }

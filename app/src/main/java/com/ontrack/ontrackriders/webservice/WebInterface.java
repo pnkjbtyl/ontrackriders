@@ -1,9 +1,14 @@
 package com.ontrack.ontrackriders.webservice;
 
-import com.ontrack.ontrackriders.activity.fragment_profile.EditProfileResponse;
+import com.ontrack.ontrackriders.activity.edit_profile.EditProfileResponse;
+import com.ontrack.ontrackriders.activity.fragment_profile.FetchProfileResponse;
+import com.ontrack.ontrackriders.activity.fragment_profile.ProfilePicResponse;
 import com.ontrack.ontrackriders.activity.login.LoginResponse;
 import com.ontrack.ontrackriders.activity.signup.SignupResponse;
 
+import java.util.List;
+
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -29,11 +34,18 @@ public interface WebInterface {
     @Headers("Content-Type: application/json")
     @POST("login")
     Call<LoginResponse> requestLogin(@Body RequestBody loginBody);
-    //for profile update
+    //for profile details update
     @Headers("Content-Type: application/json")
-    @PUT("users/update")
+    @POST("users/update")
     Call<EditProfileResponse> requestUpdateProfile(@Body RequestBody editProfileBody);
-
+    //for profile pic update
+    @Multipart
+    @POST("users/uploads")
+    Call<ProfilePicResponse> requestUpdateProfilePic(@Part MultipartBody.Part files);
+    //for fetching user profile dtails
+    @Headers("Content-Type: application/json")
+    @GET("users")
+    Call<FetchProfileResponse> requestFetchProfile();
     //for Vehicle Registration
     @Multipart
     @Headers({"Content-Type: application/json"})

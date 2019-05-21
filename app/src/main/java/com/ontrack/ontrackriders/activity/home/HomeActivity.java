@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.ontrack.ontrackriders.MyApp;
 import com.ontrack.ontrackriders.R;
 import com.ontrack.ontrackriders.activity.fragment_home.HomeFragment;
 import com.ontrack.ontrackriders.activity.fragment_profile.ProfileFragment;
@@ -39,6 +41,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if(USER_EMAIL!=null)
         {
             Log.d(TAG,"Logged In=> "+USER_EMAIL);
+            Log.d(TAG,"accessToken+>"+Pref.getUserToken(this));
+            Log.d(TAG,"refreshToken+>"+Pref.getUserRefreshToken(this));
+
         }
         else
         {
@@ -60,6 +65,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
+                new ProfileFragment()).addToBackStack(null).commit();
+        navigationView.setCheckedItem(R.id.nav_profile);
     }
     @Override
     public void onBackPressed() {
@@ -75,6 +83,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         getMenuInflater().inflate(R.menu.menu,menu);
         return true;
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.action_signout:
+                // your action goes here
+                Log.d(TAG,"Cleared User Logged In credentials");
+                Pref.clearPref(this);
+                startActivity(new Intent(this,LoginActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

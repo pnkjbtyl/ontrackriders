@@ -1,7 +1,6 @@
 package com.ontrack.ontrackriders.activity.fragment_profile;
 
-public interface IEditProfileView {
+public interface IFragProfileView {
     void startProgress();
     void stopProgress();
-    void onComplete(String message);
-}
+    void onComplete(String message);}

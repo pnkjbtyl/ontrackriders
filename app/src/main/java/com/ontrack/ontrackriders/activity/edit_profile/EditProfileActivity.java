@@ -1,4 +1,4 @@
-package com.ontrack.ontrackriders.activity.fragment_profile;
+package com.ontrack.ontrackriders.activity.edit_profile;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,9 +16,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.ontrack.ontrackriders.R;
-import com.ontrack.ontrackriders.utils.Pref;
+import com.ontrack.ontrackriders.utils.CustomProgress;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,6 +30,7 @@ import es.dmoral.toasty.Toasty;
 
 public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener,IEditProfileView {
     private static final String TAG="EditProfileActivity";
+    private CustomProgress customProgress;
     private int mYear, mMonth, mDay;
     private EditProfilePresenter editProfilePresenter;
     @BindView(R.id.editTextProfileName)
@@ -142,6 +143,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         Log.d(TAG, "Edit Profile Activity started");
         imgDob.setOnClickListener(this);
         imgUpdateProfile.setOnClickListener(this);
+        customProgress= CustomProgress.getInstance();
         spinnerBloodGroup.setOnItemSelectedListener(this);
     }
 
@@ -305,16 +307,21 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void startProgress() {
+        customProgress.showProgress(this,"updating profile, please wait...",false);
+
 
     }
 
     @Override
     public void stopProgress() {
+        customProgress.hideProgress();
 
     }
 
     @Override
     public void onComplete(String message) {
+        Toasty.success(this,message).show();
+        finish();
 
     }
 }

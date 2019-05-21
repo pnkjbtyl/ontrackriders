@@ -3,7 +3,9 @@
     <string name="toolbar_title">Ontrack Riders</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
-    <string name="country_prompt">Select bllod type</string>
+    <string name="country_prompt">Select blood type</string>
+    <string name="permission">Permission Required</string>
+
 
     <string-array name="spn_blood_type">
         <item>A+</item>

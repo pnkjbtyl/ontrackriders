@@ -1,13 +1,12 @@
-package com.ontrack.ontrackriders.activity.fragment_profile;
+package com.ontrack.ontrackriders.activity.edit_profile;
 
 import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.ontrack.ontrackriders.activity.signup.SignupResponse;
+import com.ontrack.ontrackriders.utils.CustomProgress;
 import com.ontrack.ontrackriders.utils.Pref;
 import com.ontrack.ontrackriders.webservice.Ret;
-import com.ontrack.ontrackriders.webservice.Retro;
 import com.ontrack.ontrackriders.webservice.WebInterface;
 
 import org.json.JSONException;
@@ -23,6 +22,8 @@ public class EditProfilePresenter implements IEditProfilePresenter, Callback<Edi
     private Activity activity;
     private IEditProfileView editProfileView;
     private String message;
+    private CustomProgress customProgress;
+
 
     public EditProfilePresenter(Activity activity, IEditProfileView editProfileView) {
         this.activity = activity;
@@ -33,6 +34,7 @@ public class EditProfilePresenter implements IEditProfilePresenter, Callback<Edi
     public void requestEditProfile(String name, String dob, String age, String location, String dlNo, String IdNo, String gender, String bloodGroup, String marital, String smoke, String drink, String specs) {
         Log.d("EditProfileActivity","Data received");
         //starting progress
+        editProfileView.startProgress();
         //now we will initialise Retrofit
         Log.d("EditProfileActivity","attemptimg to initialise retrofit");
         WebInterface webInterface= Ret.getClient().create(WebInterface.class);
@@ -69,11 +71,17 @@ public class EditProfilePresenter implements IEditProfilePresenter, Callback<Edi
     @Override
     public void onResponse(Call<EditProfileResponse> call, Response<EditProfileResponse> response) {
         if(response.isSuccessful() && response.code()==200) {
-            //if code is 200 and response is successfull means the user is registered successfully
-            Log.d("EditProfileActivity","Updated");
+            //if code is 200 and response is successfull means the user is updated successfully successfully
+            Log.d("EditProfileActivity","Updated profile details completed");
+            editProfileView.stopProgress();
+            message=response.body().getMessage();
+            Log.d("EditProfileActivity","Message: "+message);
+            editProfileView.onComplete(message);
+
         }
         else if(response.code()==401)
         {
+            editProfileView.stopProgress();
             try {
                 JSONObject jObjError = new JSONObject(response.errorBody().string());
                 Toast.makeText(activity, jObjError.getString("message"), Toast.LENGTH_LONG).show();
@@ -83,6 +91,7 @@ public class EditProfilePresenter implements IEditProfilePresenter, Callback<Edi
             }
         }
         else {
+            editProfileView.stopProgress();
             try {
                 JSONObject jObjError = new JSONObject(response.errorBody().string());
                 Toast.makeText(activity, jObjError.getString("message"), Toast.LENGTH_LONG).show();
@@ -99,6 +108,7 @@ public class EditProfilePresenter implements IEditProfilePresenter, Callback<Edi
     public void onFailure(Call<EditProfileResponse> call, Throwable t) {
         Log.d("EditProfileActivity",t.getLocalizedMessage());
         Toast.makeText(activity, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        editProfileView.stopProgress();
 
     }
 }

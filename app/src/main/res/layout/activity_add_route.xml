@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_24sdp"
+        android:paddingRight="@dimen/_24sdp">
+
+        <ImageView
+            android:src="@drawable/add_route_logo"
+            android:layout_width="@dimen/_274sdp"
+            android:layout_height="@dimen/_61sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:layout_gravity="center_horizontal"
+            />
+        <!--  Name Label -->
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/btn_txt_color">
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Route Title"
+                android:textColor="@color/btn_txt_color"
+                android:inputType="textPersonName" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <!-- Email Label -->
+
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/btn_txt_color">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="5"
+                android:layout_height="wrap_content">
+            <EditText
+                android:layout_weight="4"
+                android:textColorHint="@color/btn_txt_color"
+                android:textColor="@color/btn_txt_color"
+                android:id="@+id/editTextVehicleSelect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Vehicle Select"
+                android:inputType="textCapWords" />
+
+                <ImageView
+                    android:id="@+id/imageViewSelectVehicle"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_search_black_24dp" />
+            </LinearLayout>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Password Label -->
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/btn_txt_color">
+
+            <EditText
+                android:textColor="@color/btn_txt_color"
+                android:id="@+id/editTextPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Approx Departure"
+                android:inputType="time" />
+        </android.support.design.widget.TextInputLayout>
+        <!-- Confirm Password Label -->
+        <android.support.design.widget.TextInputLayout
+            app:hintTextAppearance="@style/FloatingLabelreg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/btn_txt_color">
+
+            <EditText
+                android:textColor="@color/btn_txt_color"
+                android:id="@+id/editTextCpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Approx Arrival"
+                android:inputType="time" />
+        </android.support.design.widget.TextInputLayout>
+        <!-- Signup Button -->
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_signup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:padding="12dp"
+            android:textColor="@color/btn_txt_color"
+            android:text="Create Route" />
+
+    </LinearLayout>
+</RelativeLayout>
+
