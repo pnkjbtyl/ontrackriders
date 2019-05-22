@@ -58,7 +58,7 @@ public class VehiclesList extends AppCompatActivity {
 
     private void showIt(VehicleResponse body) {
 
-        VehiclesAdapter vehiclesAdapter = new VehiclesAdapter(body,getApplicationContext());
-        vehicleslist.setAdapter(vehiclesAdapter);
+//        VehiclesAdapter vehiclesAdapter = new VehiclesAdapter(body,getApplicationContext());
+//        vehicleslist.setAdapter(vehiclesAdapter);
     }
 }

@@ -18,6 +18,8 @@ import com.ontrack.ontrackriders.R;
 import com.ontrack.ontrackriders.activity.VehicleResponse;
 import com.ontrack.ontrackriders.activity.VehiclesAdapter;
 import com.ontrack.ontrackriders.activity.VehiclesList;
+import com.ontrack.ontrackriders.activity.VehiclesViewHolder;
+import com.ontrack.ontrackriders.activity.vehicle_register.VehicleProfileActivity;
 import com.ontrack.ontrackriders.activity.vehicle_register.VehicleRegisterActivity;
 import com.ontrack.ontrackriders.webservice.Ret;
 import com.ontrack.ontrackriders.webservice.WebInterface;
@@ -31,7 +33,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VehicleFragment extends Fragment implements View.OnClickListener {
+public class VehicleFragment extends Fragment implements View.OnClickListener, VehiclesViewHolder.OnItemListener {
     @BindView(R.id.imageButtonAddVehicle)
     ImageButton imageButtonAddVehicle;
     private RecyclerView vehicleslist;
@@ -80,7 +82,7 @@ public class VehicleFragment extends Fragment implements View.OnClickListener {
 
     private void showIt(VehicleResponse body) {
         item.clear();
-        vehiclesAdapter = new VehiclesAdapter(body,MyApp.getContext());
+        vehiclesAdapter = new VehiclesAdapter(body,MyApp.getContext(),this);
         layoutManager = new LinearLayoutManager(MyApp.getContext());
         vehicleslist.setLayoutManager(layoutManager);
         vehicleslist.setHasFixedSize(true);
@@ -100,4 +102,10 @@ public class VehicleFragment extends Fragment implements View.OnClickListener {
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+
+        String id =Integer.toString(position);
+        Log.d("Position is : ",id);
+    }
 }

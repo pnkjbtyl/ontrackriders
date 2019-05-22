@@ -6,6 +6,7 @@ import com.ontrack.ontrackriders.activity.fragment_profile.FetchProfileResponse;
 import com.ontrack.ontrackriders.activity.fragment_profile.ProfilePicResponse;
 import com.ontrack.ontrackriders.activity.login.LoginResponse;
 import com.ontrack.ontrackriders.activity.signup.SignupResponse;
+import com.ontrack.ontrackriders.activity.vehicle_register.VehicleDetailResponse;
 import com.ontrack.ontrackriders.activity.vehicle_register.VehicleRegisterResponse;
 
 import java.util.List;
@@ -22,6 +23,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface WebInterface {
 
@@ -52,7 +54,14 @@ public interface WebInterface {
     @Headers({"Content-Type: application/json"})
     @POST("vehicles/add")
     Call<VehicleRegisterResponse> requestVehicleReg(@Body RequestBody vehiclereg_body);
+
     @Headers({"Content-Type: application/json"})
     @GET("vehicles")
     Call<VehicleResponse> getVehicleData();
+
+    @Headers({"Content-Type: application/json"})
+    @GET("/vehicles/details/{id}")
+    Call<VehicleDetailResponse> getVehicleDetails(@Path("id") String id);
+
+
 }
