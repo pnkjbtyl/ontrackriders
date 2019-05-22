@@ -40,7 +40,9 @@ public class SplashActivity extends AppCompatActivity {
         int currentapiVersion = Build.VERSION.SDK_INT;
         if (currentapiVersion >= Build.VERSION_CODES.M) {
             String[] array = {Manifest.permission.READ_EXTERNAL_STORAGE,
-                     Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                     Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION
+            };
             requestAppPermissions(array, R.string.permission, REQUEST_PERMISSIONS);
         } else {
             onPermissionsGranted(REQUEST_PERMISSIONS);

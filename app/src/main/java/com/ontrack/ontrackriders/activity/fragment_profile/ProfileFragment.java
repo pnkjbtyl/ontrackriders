@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.GlideUrl;
@@ -29,7 +28,6 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import org.json.JSONObject;
 import java.net.URISyntaxException;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
@@ -91,7 +89,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener,IF
         super.onViewCreated(view, savedInstanceState);
         imageViewEditProfile.setOnClickListener(this);
         imageViewProfileCamera.setOnClickListener(this);
-        fetchprofile();
 
     }
 
@@ -119,9 +116,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener,IF
                     String smoke=fetchProfileResponse.getData().getSmoke();
                     String drink=fetchProfileResponse.getData().getDrink();
                     String spectacles=fetchProfileResponse.getData().getSpectacles();
-
                     Log.d(TAG,"NAME=> "+name+"\n"+ "AGE=> "+age+"\n");
-
                     textViewProfileName.setText(name);
                     textViewProfileAge.setText(age);
                     textViewProfileDob.setText(dob);
@@ -134,7 +129,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener,IF
                     textViewProfileSmoke.setText(smoke);
                     textViewProfileDrink.setText(drink);
                     textViewProfileSpecs.setText(spectacles);
-
                 }
                 else {
 

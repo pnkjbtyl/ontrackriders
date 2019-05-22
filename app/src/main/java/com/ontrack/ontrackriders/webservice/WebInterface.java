@@ -40,7 +40,7 @@ public interface WebInterface {
     Call<LoginResponse> requestLogin(@Body RequestBody loginBody);
     //for profile details update
     @Headers("Content-Type: application/json")
-    @POST("users/update")
+    @PUT("users/update")
     Call<EditProfileResponse> requestUpdateProfile(@Body RequestBody editProfileBody);
     //for profile pic update
     @Multipart

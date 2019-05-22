@@ -5,6 +5,7 @@
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="country_prompt">Select blood type</string>
     <string name="permission">Permission Required</string>
+    <string name="places_api_key">AIzaSyDIoOsso3TznDa8czihX7OeZq65NXOjVW4</string>
 
 
     <string-array name="spn_blood_type">

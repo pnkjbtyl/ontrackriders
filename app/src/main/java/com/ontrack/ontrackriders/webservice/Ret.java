@@ -8,6 +8,7 @@ import com.ontrack.ontrackriders.utils.Pref;
 import java.io.IOException;
 
 import okhttp3.Authenticator;
+import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -28,6 +29,7 @@ public class Ret {
     {
 
         final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+
 
         httpClient.addInterceptor(new Interceptor() {
             @Override
