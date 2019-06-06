@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
         getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
-                new ProfileFragment()).addToBackStack(null).commit();
+                new ProfileFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_profile);
     }
     @Override

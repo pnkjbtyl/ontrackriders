@@ -10,11 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
-
+import android.widget.TextView;
 
 
 import com.ontrack.ontrackriders.R;
 import com.ontrack.ontrackriders.activity.home.HomeActivity;
+import com.ontrack.ontrackriders.activity.login.LoginActivity;
 import com.ontrack.ontrackriders.utils.CustomProgress;
 import com.ontrack.ontrackriders.utils.PasswordValidator;
 
@@ -30,10 +31,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.editTextEmail) EditText etEmail;
     @BindView(R.id.editTextPass) EditText etPass;
     @BindView(R.id.editTextCpass) EditText etCpass;
+    @BindView(R.id.textViewButtonLogin)
+    TextView textViewButtonLogin;
     private static final String TAG="SignUpActivity";
     private CustomProgress customProgress;
     private PasswordValidator passwordValidator;
     private SignupPresenter signupPresenter;
+    private static final String NAME_PATTERN="^[\\p{L} .'-]+$";
     private static final String EMAIL_PATTERN="^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
 
     @SuppressLint("NewApi")
@@ -48,6 +52,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         //initialising views
         ButterKnife.bind(this);
         buttonSignup.setOnClickListener(this);
+        textViewButtonLogin.setOnClickListener(this);
         customProgress=CustomProgress.getInstance();
         signupPresenter=new SignupPresenter(this,this);
         passwordValidator=new PasswordValidator();
@@ -58,10 +63,19 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        validateFields();
+        if(v.getId()==R.id.btn_signup)
+        {
+            validateFields();
+        }
+        else if(v.getId()==R.id.textViewButtonLogin)
+        {
+            startActivity(new Intent(this, LoginActivity.class)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
     }
     private void validateFields() {
-        String name=etName.getText().toString().trim();
+        String name=etName.getText().toString();
         String email=etEmail.getText().toString().trim();
         String password=etPass.getText().toString().trim();
         String confirm_password=etCpass.getText().toString().trim();
@@ -70,6 +84,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if(TextUtils.isEmpty(name))
         {
             etName.setError("Name Required*");
+        }
+        else if(!name.matches(NAME_PATTERN))
+        {
+            Toasty.warning(this,"Invalid Name").show();
         }
         else if(TextUtils.isEmpty(email))
         {
@@ -122,6 +140,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent=new Intent(this, HomeActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        finish();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
         finish();
     }
 }

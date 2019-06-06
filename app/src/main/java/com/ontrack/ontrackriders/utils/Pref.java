@@ -9,7 +9,7 @@ public class Pref {
     public static final String USER_EMAIL = "user_email";
     public static final String USER_TOKEN = "user_token";
     public static final String USER_REFRESH_TOKEN = "user_refresh_token";
-    private static final String USER_PROFILE_PIC_ID="profile_pic_id";
+    public static final String USER_PROFILE_PIC_URL="profile_pic_url";
 
 
     public static SharedPreferences getPref(Context context) {
@@ -27,10 +27,10 @@ public class Pref {
         getPref(context).edit().putString(USER_EMAIL,userEmail).commit();
     }
 
-    //put profile id in shared pref
-    public static void putUserProfilePicId(Context context,String userEmail)
+    //put profile pic url in shared pref
+    public static void putUserProfilePicUrl(Context context,String userProfilePicUrl)
     {
-        getPref(context).edit().putString(USER_PROFILE_PIC_ID,userEmail).commit();
+        getPref(context).edit().putString(USER_PROFILE_PIC_URL,userProfilePicUrl).commit();
     }
     //put username no in shared pref
     public static void putToken(Context context,String token)
@@ -52,9 +52,9 @@ public class Pref {
         getPref(context).edit().remove(USER_TOKEN).commit();
     }
 
-    //get user profile pic id
-    public static String getUserProfilePicId(Context context) {
-        return getPref(context).getString(USER_PROFILE_PIC_ID, null);
+    //get user profile pic url
+    public static String getUserProfilePicURL(Context context) {
+        return getPref(context).getString(USER_PROFILE_PIC_URL, null);
     }
 
       //get user phone number

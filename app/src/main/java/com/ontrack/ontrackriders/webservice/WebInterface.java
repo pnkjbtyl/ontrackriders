@@ -4,6 +4,7 @@ import com.ontrack.ontrackriders.activity.VehicleResponse;
 import com.ontrack.ontrackriders.activity.edit_profile.EditProfileResponse;
 import com.ontrack.ontrackriders.activity.fragment_profile.FetchProfileResponse;
 import com.ontrack.ontrackriders.activity.fragment_profile.ProfilePicResponse;
+import com.ontrack.ontrackriders.activity.fragment_profile.get_profile_pic_url_model.GetProfilePicURlResponse;
 import com.ontrack.ontrackriders.activity.login.LoginResponse;
 import com.ontrack.ontrackriders.activity.signup.SignupResponse;
 import com.ontrack.ontrackriders.activity.vehicle_register.VehicleDetailResponse;
@@ -63,5 +64,18 @@ public interface WebInterface {
     @GET("/vehicles/details/{id}")
     Call<VehicleDetailResponse> getVehicleDetails(@Path("id") String id);
 
+    //for forgot password
+    @Headers("Content-Type: application/json")
+    @POST("forget/password")
+    Call<ResponseBody> requestForgotPassword(@Body RequestBody forgotPasswordBody);
 
+    //for reset password
+    @Headers("Content-Type: application/json")
+    @PUT("reset/password")
+    Call<ResponseBody> requestResetPassword(@Body RequestBody resetPasswordBody);
+
+    //for getting user profile pic url
+    @Headers({"Content-Type: application/json"})
+    @GET("/users/setprofilepic/{id}")
+    Call<GetProfilePicURlResponse> getProfilePicUrl(@Path("id") String id);
 }

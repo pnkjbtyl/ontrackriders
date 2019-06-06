@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.ontrack.ontrackriders.utils.Pref;
 import com.ontrack.ontrackriders.webservice.IBaseUrl;
 import com.ontrack.ontrackriders.webservice.Retro;
 import com.ontrack.ontrackriders.webservice.WebInterface;
@@ -71,6 +72,11 @@ public class SignupPresenter implements ISignupPresenter,IBaseUrl, Callback<Sign
             Log.d("SignupActivity","DETAILS FETCHED => "+"Name: "+name+ "\n" +"Email:" + email+ "\n"+
                     "Token: "+token+ "\n"+"RefreshToken: "+ refreshToken);
             Log.d("SignupActivity","User Registration successful");
+            //now saving user info and token into local storage
+            Pref.putUserName(activity,name);
+            Pref.putUserEmail(activity,email);
+            Pref.putToken(activity,token);
+            Pref.putRefreshToken(activity,refreshToken);
             iSignupView.stopProgress();
             iSignupView.onComplete(message);
         }

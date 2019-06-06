@@ -1,5 +1,7 @@
 package com.ontrack.ontrackriders.activity.vehicle_register;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,21 +10,29 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.ontrack.ontrackriders.MyApp;
 import com.ontrack.ontrackriders.R;
 import com.ontrack.ontrackriders.activity.login.LoginResponse;
+import com.ontrack.ontrackriders.utils.PathUtil;
 import com.ontrack.ontrackriders.webservice.Retro;
 import com.ontrack.ontrackriders.webservice.WebInterface;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -37,6 +47,13 @@ public class VehicleRegisterActivity extends AppCompatActivity implements IVehic
     Spinner type_vehicle,type_body,seat_cap,engine_cc,fuel_type,interior;
     RadioGroup pets,music,smoke;
     RadioButton pets_btn,music_btn,smoke_btn;
+    @BindView(R.id.imageViewAddVehicle)
+    ImageView imageViewAddVehicle;
+    @BindView(R.id.imageViewCar)
+    ImageView imageViewCar;
+    private Uri destination=null;
+    private String filePath;
+    private static final String TAG="VehicleRegisterActivity";
 
     RadioButton petsyes,petsno,musicyes,musicno,smokeyes,smokeno;
 
@@ -53,6 +70,7 @@ public class VehicleRegisterActivity extends AppCompatActivity implements IVehic
         setContentView(R.layout.activity_vehicle_register);
         final VehicleRegisterPresenter vehicleRegisterPresenter=new
                 VehicleRegisterPresenter(this,this);
+        ButterKnife.bind(this);
 
 
         reg_no = (EditText)findViewById(R.id.editTextRno);
@@ -83,6 +101,15 @@ public class VehicleRegisterActivity extends AppCompatActivity implements IVehic
         smokeno = (RadioButton)findViewById(R.id.smokeno);
 
         veh_reg_btn = (Button)findViewById(R.id.veh_reg_btn);
+
+        //gettimg image from gallery
+
+        imageViewAddVehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getVehicleImage();
+            }
+        });
 
         // Type of Vehicle Spinner Value
         type_vehicle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -252,6 +279,10 @@ public class VehicleRegisterActivity extends AppCompatActivity implements IVehic
                 {
                     Toasty.warning(VehicleRegisterActivity.this,"Is Smoke allowed?").show();
                 }
+                else if(destination==null)
+                {
+                    Toasty.warning(VehicleRegisterActivity.this,"Please Upload Vehicle Image").show();
+                }
                 else {
                     selectedPet = pets.getCheckedRadioButtonId();
                     pets_btn = (RadioButton)findViewById(selectedPet);
@@ -274,6 +305,13 @@ public class VehicleRegisterActivity extends AppCompatActivity implements IVehic
         });
     }
 
+    private void getVehicleImage() {
+        CropImage.activity()
+                .setGuidelines(CropImageView.Guidelines.ON).
+                setOutputCompressQuality(70)
+                .start(this);
+    }
+
     @Override
     public void startProgress() {
 
@@ -289,4 +327,26 @@ public class VehicleRegisterActivity extends AppCompatActivity implements IVehic
         Toasty.success(this,message).show();
         finish();
     }
-}
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                destination = result.getUri();
+                imageViewCar.setImageURI(destination);
+                try {
+                    filePath= PathUtil.getPath(MyApp.getContext(),destination);
+                    Log.d(TAG,"Image Path is=> "+ filePath);
+
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+
+
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+                Log.d(TAG,"Error"+error.getMessage());
+            }
+        }
+    }}

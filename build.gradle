@@ -21,6 +21,8 @@ allprojects {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
+        maven { url "http://microdb.s3.amazonaws.com" }
+
 
 
     }

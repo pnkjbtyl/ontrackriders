@@ -58,20 +58,31 @@
 
         <Button
             android:id="@+id/bt_login"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
             android:layout_marginTop="@dimen/_24sdp"
-            android:padding="12dp"
+            android:background="@drawable/btn_bg"
+            android:layout_gravity="center_horizontal"
             android:textColor="@color/btn_txt_color"
             android:text="Login"/>
 
-        <TextView android:id="@+id/textViewSignup"
+        <TextView
+            android:id="@+id/textViewSignup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_24sdp"
             android:text="No account yet? Create one"
+            android:gravity="center"
+            android:textColor="@color/white_color"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/textViewForgotPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:text="Forgot Password, Click here!"
             android:gravity="center"
             android:textColor="@color/white_color"
             android:textSize="16sp"/>
